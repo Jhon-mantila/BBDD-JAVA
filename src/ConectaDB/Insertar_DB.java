@@ -23,18 +23,18 @@ public class Insertar_DB {
 			
 			//3. Insertar registros
 			
-			/*String intruccionSql = "INSERT INTO productos (nombre, precio, fecha, ciudad) VALUES ('ZANAHORIA', 550.2, '2021-02-15', 'BOGOTA')";
+			String intruccionSql = "INSERT INTO productos (seccion, nombre, precio, fecha, ciudad) VALUES ('TECNOLOGÍA', 'CELULAR', 580700.2, '2021-06-11', 'MEDELLIN')";
 									
-			int registro = miStatement.executeUpdate(intruccionSql);*/
+			int registro = miStatement.executeUpdate(intruccionSql);
 			
 			
 			/*String actSql = "UPDATE productos SET precio=325 WHERE codigo = 9";
 			
 			miStatement.executeUpdate(actSql);*/
 			
-			String delSql = "DELETE FROM productos WHERE codigo=9";
+			/*String delSql = "DELETE FROM productos WHERE codigo=9";
 			
-			miStatement.executeUpdate(delSql);
+			miStatement.executeUpdate(delSql);*/
 			
 			
 		
