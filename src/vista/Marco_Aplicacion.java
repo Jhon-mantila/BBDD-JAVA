@@ -10,7 +10,7 @@ public class Marco_Aplicacion extends JFrame{
 
 	public JComboBox secciones, paises;
 	
-	private JTextArea resultado;
+	public JTextArea resultado;
 	
 public Marco_Aplicacion() {
 		
@@ -57,7 +57,9 @@ public Marco_Aplicacion() {
 		
 		add(botonConsulta, BorderLayout.SOUTH);
 		
-		addWindowListener(new ControladorCargaSecciones(this));
+		botonConsulta.addActionListener(new ControladorBtnEjecuta(this));
+		
+		addWindowListener(new ControladorCargaMenus(this));
 		
 		setVisible(true);
 	}

@@ -4,13 +4,15 @@ import java.sql.*;
 import controlador.*;
 
 
-public class cargaSecciones {
+public class cargaMenus {
 	
 	 Conexion miConexion;
 	 
 	 public ResultSet rs;
 	 
-	 public cargaSecciones(){
+	 public ResultSet  rs2;
+	 
+	 public cargaMenus(){
 		 
 		 miConexion = new Conexion();
 		  
@@ -26,7 +28,11 @@ public class cargaSecciones {
 			 
 			 Statement secciones = accesoBBDD.createStatement();
 			 
+			 Statement paises = accesoBBDD.createStatement();
+			 
 			 rs = secciones.executeQuery("SELECT DISTINCTROW SECCION FROM PRODUCTOS");
+			 
+			 rs2 = paises.executeQuery("SELECT DISTINCTROW CIUDAD FROM PRODUCTOS");
 			 
 			 while(rs.next()) {
 				 
@@ -34,11 +40,18 @@ public class cargaSecciones {
 				 
 				 miProducto.setSeccion(rs.getString(1));
 				 
-				 return miProducto.getSeccion();
+				 miProducto.setCiudad(rs2.getString(1));
+				 
+				 //return miProducto.getSeccion();
 				 
 			 }
 			 
 			 rs.close();
+			 
+			 rs2.close();
+			 
+			 accesoBBDD.close();
+			 
 		 }catch(Exception e) {
 			 
 			 

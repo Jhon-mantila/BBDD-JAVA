@@ -5,15 +5,15 @@ import modelo.*;
 
 import java.awt.event.*;
 
-public class ControladorCargaSecciones extends WindowAdapter{
+public class ControladorCargaMenus extends WindowAdapter{
 	
 	
-	cargaSecciones obj = new cargaSecciones();
+	cargaMenus obj = new cargaMenus();
 	
 	private Marco_Aplicacion elmarco;
 	
 	
-	public ControladorCargaSecciones (Marco_Aplicacion elmarco) {
+	public ControladorCargaMenus (Marco_Aplicacion elmarco) {
 		
 		this.elmarco = elmarco;
 	}
@@ -28,6 +28,11 @@ public class ControladorCargaSecciones extends WindowAdapter{
 				
 				elmarco.secciones.addItem(obj.rs.getString(1));
 				
+			}
+			
+			while (obj.rs2.next()) {
+				
+				elmarco.paises.addItem(obj.rs2.getString(1));
 			}
 			
 		}catch(Exception e2) {
